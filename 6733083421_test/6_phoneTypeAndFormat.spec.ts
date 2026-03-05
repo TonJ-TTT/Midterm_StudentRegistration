@@ -3,7 +3,7 @@ import path from 'path';
 import { test, expect } from "@playwright/test";
 import { parse } from 'csv-parse/sync';
 
-const phonePath = path.join(__dirname, './testData/testPhone.csv');
+const phonePath = path.join(__dirname, './testdata/testPhone.csv');
 const phoneRecords = parse(fs.readFileSync(phonePath), {
   columns: true,
   skip_empty_lines: true,
@@ -26,9 +26,9 @@ test("Test Phone Number Input", async ({ page }) => {
   await test.step('Check Phone Number Format', async () => {
     for ( const record of phoneRecords as any) {
       await page.getByRole('textbox', { name: 'First Name' }).click();
-      await page.getByRole('textbox', { name: 'First Name' }).fill("emailTest");
+      await page.getByRole('textbox', { name: 'First Name' }).fill("PhoneTest");
       await page.getByRole('textbox', { name: 'Last Name' }).click();
-      await page.getByRole('textbox', { name: 'Last Name' }).fill("emailTest");
+      await page.getByRole('textbox', { name: 'Last Name' }).fill("PhoneTest");
       await page.getByRole('radio', { name: 'Male', exact: true }).check();
       await page.getByRole('textbox', { name: 'Mobile Number' }).click();
       await page.getByRole('textbox', { name: 'Mobile Number' }).fill(record.TextPhone);

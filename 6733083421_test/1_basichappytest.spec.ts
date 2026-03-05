@@ -3,7 +3,7 @@ import path from 'path';
 import { test, expect } from "@playwright/test";
 import { parse } from 'csv-parse/sync';
 
-const records = parse(fs.readFileSync(path.join(__dirname, './testData/mandatoryFields.csv')), {
+const records = parse(fs.readFileSync(path.join(__dirname, './testdata/mandatoryFields.csv')), {
   columns: true,
   skip_empty_lines: true,
 });
@@ -106,7 +106,7 @@ test("2. Full fill test case( valid data )", async ({ page }) => {
   });
   await test.step('Upload picture', async () => {
     // select file to upload
-    await page.getByRole('button', { name: 'Choose File' }).setInputFiles( ".\\testdata\\TestPicture.png");
+    await page.getByRole('button', { name: 'Choose File' }).setInputFiles( "./testdata/TestPicture.png");
     await expect(page.getByRole('button', { name: 'Choose File' })).toHaveValue(/TestPicture.png/);
   });
   await test.step('Fill current address and select state and city', async () => {

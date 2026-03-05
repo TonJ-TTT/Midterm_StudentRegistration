@@ -3,7 +3,7 @@ import path from 'path';
 import { test, expect } from "@playwright/test";
 import { parse } from 'csv-parse/sync';
 
-const emailPath = path.join(__dirname, './testData/testEmail.csv');
+const emailPath = path.join(__dirname, './testdata/testEmail.csv');
 const emailRecords = parse(fs.readFileSync(emailPath), {
   columns: true,
   skip_empty_lines: true,
