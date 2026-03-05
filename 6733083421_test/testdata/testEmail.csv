@@ -1,0 +1,13 @@
+TextEmail,ResultType
+"false","Invalid"
+"false@","Invalid"
+"false.com","Invalid"
+"false@..com","Invalid"
+"false@mail..com","Invalid"
+"false@gmail..com","Invalid"
+"false@gmail#$%.com","Invalid"
+"user@mail.com","Valid"
+"user@gmail.com","Valid"
+"user123@gmail.com","Valid"
+"user@mail.univer.co.th","Valid"
+"user123@mail.univer.co.th","Valid"

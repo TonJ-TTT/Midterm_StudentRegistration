@@ -85,6 +85,7 @@ test("2. Full fill test case( valid data )", async ({ page }) => {
     await page.getByRole('gridcell', { name: 'Choose Monday, January 1st,' }).click();
   });
   await test.step('Select subjects', async () => {
+    // complete subjects test in this test file
     await page.locator('.subjects-auto-complete__input-container').click();
     await page.locator('#subjectsInput').fill('m');
     await page.getByRole('option', { name: 'Maths' }).click();

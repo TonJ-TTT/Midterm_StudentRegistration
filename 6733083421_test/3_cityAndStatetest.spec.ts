@@ -11,6 +11,13 @@ test("Check city options based on selected state ( have only 4 states )", async 
     });
   });
 
+  await test.step('Check City is disabled or empty by default', async () => {
+    await expect(page.locator('div').filter({ hasText: /^Select City$/ }).first()).toBeVisible();
+    await expect(page.locator('div').filter({ hasText: /^Select City$/ }).first()).toContainText('Select City');
+    await page.locator('div').filter({ hasText: /^Select City$/ }).first().click();
+    await expect(page.locator('.css-26l3qy-menu')).toBeHidden();
+  });
+
   await test.step(`City based on State`, async () => {
     await page.locator('div').filter({ hasText: /^Select State$/ }).nth(2).click();
     // select state
