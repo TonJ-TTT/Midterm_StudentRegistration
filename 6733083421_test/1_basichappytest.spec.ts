@@ -13,7 +13,7 @@ test.describe.configure({ mode: 'serial' });
 
 test.setTimeout( 3 *60 * 1000);
 
-test("1. Only mandatory fields( valid data)", async ({ page }) => {
+test("1. Only mandatory fields( valid data )", async ({ page }) => {
 
   await test.step('Fill mandatory fields and submit form', async () => {
     await page.goto('https://demoqa.com/automation-practice-form',{
@@ -60,7 +60,7 @@ test("1. Only mandatory fields( valid data)", async ({ page }) => {
   }
 });
 
-test("2. Full fill test case( valid data)", async ({ page }) => {
+test("2. Full fill test case( valid data )", async ({ page }) => {
   await test.step('Load the form page', async () => {
     await page.goto('https://demoqa.com/automation-practice-form',{
     waitUntil: 'domcontentloaded',

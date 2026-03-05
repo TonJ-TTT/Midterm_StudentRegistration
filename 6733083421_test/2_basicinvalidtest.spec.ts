@@ -14,7 +14,7 @@ test.setTimeout( 3 *60 * 1000);
 
 test("Invalid test by leaving each mandatory field empty", async ({ page }) => {
 
-  await test.step('Fill mandatory fields and submit form', async () => {
+  await test.step('Load the form page', async () => {
     await page.goto('https://demoqa.com/automation-practice-form',{
     waitUntil: 'domcontentloaded',
     timeout: 3 * 60 * 1000
