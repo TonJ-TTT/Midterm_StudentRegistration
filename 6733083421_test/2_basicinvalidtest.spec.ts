@@ -3,7 +3,7 @@ import path from 'path';
 import { test, expect } from "@playwright/test";
 import { parse } from 'csv-parse/sync';
 
-const records = parse(fs.readFileSync(path.join(__dirname, '.\\testData\\missingFields.csv')), {
+const records = parse(fs.readFileSync(path.join(__dirname, './testData/missingFields.csv')), {
   columns: true,
   skip_empty_lines: true,
 });
